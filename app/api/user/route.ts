@@ -1,10 +1,15 @@
 import { NextResponse } from "next/server";
-import prisma from "../../../lib/prisma";
 import { hash } from "bcrypt";
+import db from "../../../lib/prisma";
+
+export async function GET() {
+    return NextResponse.json({ message: "Hello from the user API" });
+}
 
 export async function POST(req: Request) {
     const body = await req.json();
     const { username, email, password } = body;
+    console.log("Received data:", body);
     // check if the email is already exist
     if (!username || !email || !password) {
         return NextResponse.json({
@@ -12,12 +17,12 @@ export async function POST(req: Request) {
         }, { status: 400 });
     }
 
-    const emailExists = await prisma.user.findUnique({
+    const emailExists = await db.user.findUnique({
         where: {
             email: email,
         }
     })
-    const usernameExists = await prisma.user.findUnique({
+    const usernameExists = await db.user.findUnique({
         where: {
             username: username,
         }
@@ -30,7 +35,7 @@ export async function POST(req: Request) {
         return NextResponse.json({message: "Username already exists"}, { status: 409});
     }
     const hashedpassword = await hash(password,10);
-    const newUser = await prisma.user.create({
+    const newUser = await db.user.create({
         data:{
             username: username,
             email: email,
