@@ -1,0 +1,197 @@
+.google-login-button {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+
+  
+  .signpage-container {
+    width: 90%;
+    height: 70vh;
+    border-radius: 15px;
+    display: flex;
+  }
+  
+  .signpage-right {
+    width: 40%;
+    border-radius: 15px;
+    background-color: #93509793;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.241);
+  }
+  
+  .signpage-left {
+    width: 60%;
+    border-radius: 15px;
+    background-image: url('https://i.pinimg.com/originals/cc/d7/91/ccd791805259af1b14ad5fabc905d018.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-right: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.241);
+  }
+  
+  .signpage-left::before {
+    content: '';
+    position: absolute;
+    border-radius: 15px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(25px);
+  }
+  
+  .signpage-login-box {
+    width: 100%;
+  }
+  
+  .signpage-login-title {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .signpage-login-box h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .signpage-input-box {
+    margin-bottom: 15px;
+  }
+  
+  .signpage-input-box label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .signpage-input-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .signpage-login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #935097;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+  }
+  
+  .signpage-login-button:hover {
+    background-color: #903095;
+  }
+  
+  .signpage-left .signpage-welcome-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .signpage-left .signpage-welcome-message h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+  }
+  
+  .signpage-left .signpage-welcome-message p {
+    font-size: 24px;
+  }
+  
+  .signpage-login-options {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .signpage-login-options a {
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+    color: #007BFF;
+  }
+  
+  .signpage-login-options a:hover {
+    text-decoration: underline;
+  }
+  
+  .signpage-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .signpage-divider::before, .signpage-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .signpage-divider:not(:empty)::before {
+    margin-right: .25em;
+  }
+  
+  .signpage-divider:not(:empty)::after {
+    margin-left: .25em;
+  }
+  
+  .signpage-social-login {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 800px) {
+    .signpage-container {
+      flex-direction: column;
+      height: auto;
+      box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.241);
+    }
+  
+    .signpage-left, .signpage-right {
+      width: 100%;
+    }
+  
+    .signpage-left {
+      height: 200px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+      box-shadow: none;
+    }
+  
+    .signpage-right {
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      box-shadow: none;
+    }
+  
+    .signpage-left::before {
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+  
+    .signpage-left .signpage-welcome-message {
+      position: relative;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      transform: none;
+      top: 30px;
+      left: 0;
+      padding: 20px;
+    }
+  }
+  
